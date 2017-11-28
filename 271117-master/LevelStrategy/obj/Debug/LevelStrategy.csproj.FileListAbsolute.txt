@@ -1,0 +1,13 @@
+C:\Users\v.pavlov\Downloads\271117-master\LevelStrategy\bin\Debug\LevelStrategy.exe.config
+C:\Users\v.pavlov\Downloads\271117-master\LevelStrategy\bin\Debug\NLog.config
+C:\Users\v.pavlov\Downloads\271117-master\LevelStrategy\bin\Debug\LevelStrategy.exe
+C:\Users\v.pavlov\Downloads\271117-master\LevelStrategy\bin\Debug\LevelStrategy.pdb
+C:\Users\v.pavlov\Downloads\271117-master\LevelStrategy\bin\Debug\NLog.dll
+C:\Users\v.pavlov\Downloads\271117-master\LevelStrategy\bin\Debug\NLog.xml
+C:\Users\v.pavlov\Downloads\271117-master\LevelStrategy\obj\Debug\LevelStrategy.csprojResolveAssemblyReference.cache
+C:\Users\v.pavlov\Downloads\271117-master\LevelStrategy\obj\Debug\LevelStrategy.FormAllSignal.resources
+C:\Users\v.pavlov\Downloads\271117-master\LevelStrategy\obj\Debug\LevelStrategy.MainForm.resources
+C:\Users\v.pavlov\Downloads\271117-master\LevelStrategy\obj\Debug\LevelStrategy.Properties.Resources.resources
+C:\Users\v.pavlov\Downloads\271117-master\LevelStrategy\obj\Debug\LevelStrategy.csproj.GenerateResource.Cache
+C:\Users\v.pavlov\Downloads\271117-master\LevelStrategy\obj\Debug\LevelStrategy.exe
+C:\Users\v.pavlov\Downloads\271117-master\LevelStrategy\obj\Debug\LevelStrategy.pdb
