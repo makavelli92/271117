@@ -1,0 +1,9 @@
+c:\users\v.pavlov\documents\visual studio 2015\Projects\PersentCalculat\PersentCalculat\bin\Debug\PersentCalculat.exe.config
+c:\users\v.pavlov\documents\visual studio 2015\Projects\PersentCalculat\PersentCalculat\bin\Debug\PersentCalculat.exe
+c:\users\v.pavlov\documents\visual studio 2015\Projects\PersentCalculat\PersentCalculat\bin\Debug\PersentCalculat.pdb
+c:\users\v.pavlov\documents\visual studio 2015\Projects\PersentCalculat\PersentCalculat\obj\Debug\PersentCalculat.csprojResolveAssemblyReference.cache
+c:\users\v.pavlov\documents\visual studio 2015\Projects\PersentCalculat\PersentCalculat\obj\Debug\PersentCalculat.Form1.resources
+c:\users\v.pavlov\documents\visual studio 2015\Projects\PersentCalculat\PersentCalculat\obj\Debug\PersentCalculat.Properties.Resources.resources
+c:\users\v.pavlov\documents\visual studio 2015\Projects\PersentCalculat\PersentCalculat\obj\Debug\PersentCalculat.csproj.GenerateResource.Cache
+c:\users\v.pavlov\documents\visual studio 2015\Projects\PersentCalculat\PersentCalculat\obj\Debug\PersentCalculat.exe
+c:\users\v.pavlov\documents\visual studio 2015\Projects\PersentCalculat\PersentCalculat\obj\Debug\PersentCalculat.pdb
