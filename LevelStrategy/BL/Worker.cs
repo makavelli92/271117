@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using LevelStrategy.Model;
 using NLog;
+using System.Windows.Forms;
 
 namespace LevelStrategy.BL
 {
@@ -19,7 +20,10 @@ namespace LevelStrategy.BL
             if (bars.MovingAverage != null)
                 lastIndex = bars.MovingAverage.Count - 1;
             if (bars.StepPrice == 0)
+            {
                 CalculateStepPrice(bars);
+                bars.CountSigns = GetSignCount(bars.StepPrice.ToString());
+            }
 
             if (bars.MovingAverage != null && bars.MovingAverage.Count > 0)
                 DeleteLastData(bars);
@@ -55,18 +59,38 @@ namespace LevelStrategy.BL
             bars.StepPrice = Convert.ToDouble(stepPrice);
         }
 
+        static int GetSignCount(string number)
+        {
+            if (!number.Contains(","))
+                return 1;
+            return number.Length - 1 - number.IndexOf(',');
+        }
+
+        static int GetRowNumber(DataGridViewRowCollection rowsCollection, string key)
+        {
+            for (int i = 0; i < rowsCollection.Count - 1; i++)
+            {
+                if ((string)rowsCollection[i].Cells[0].Value == key)
+                    return i;
+            }
+            return -1;
+        }
+
         static void EventSignal(object e, SignalData data)
         {
             Logger.Debug($@"Сигнал получен для {data.NameSecurity}, время - " + DateTime.Now);
-            MainForm.grid.Rows[data.RowNumber].Cells[1].Value = data.SignalType;
-            MainForm.grid.Rows[data.RowNumber].Cells[2].Value = data.DateBsy;
-            MainForm.grid.Rows[data.RowNumber].Cells[3].Value = data.DateBpy1;
-            MainForm.grid.Rows[data.RowNumber].Cells[4].Value = data.DateBpy2;
-            MainForm.grid.Rows[data.RowNumber].Cells[5].Value = data.Level;
-            MainForm.grid.Rows[data.RowNumber].Cells[6].Value = data.Lyft;
-            MainForm.grid.Rows[data.RowNumber].Cells[7].Value = data.CancelSignal;
-            MainForm.grid.Rows[data.RowNumber].Cells[8].Value = data.TimeNow;
-            MainForm.grid.Rows[data.RowNumber].DefaultCellStyle.BackColor = Color.Cyan;
+
+            int temp = GetRowNumber(MainForm.grid.Rows, data.NameSecurity);
+
+            MainForm.grid.Rows[temp].Cells[1].Value = data.SignalType;
+            MainForm.grid.Rows[temp].Cells[2].Value = data.DateBsy;
+            MainForm.grid.Rows[temp].Cells[3].Value = data.DateBpy1;
+            MainForm.grid.Rows[temp].Cells[4].Value = data.DateBpy2;
+            MainForm.grid.Rows[temp].Cells[5].Value = data.Level;
+            MainForm.grid.Rows[temp].Cells[6].Value = data.Lyft;
+            MainForm.grid.Rows[temp].Cells[7].Value = data.CancelSignal;
+            MainForm.grid.Rows[temp].Cells[8].Value = data.TimeNow.ToShortTimeString();
+            MainForm.grid.Rows[temp].DefaultCellStyle.BackColor = Color.Cyan;
         }
 
         public static void DeleteLastData(Bars bars)

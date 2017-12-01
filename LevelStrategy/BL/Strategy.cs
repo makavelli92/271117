@@ -20,34 +20,34 @@ namespace LevelStrategy.BL
             int bsy;
             if (FindModelRepeatLevel(bar, bars.indexFractalHigh, bars.indexFractalsLow, bars, out bsy) == "Short")//&& DefenitionAreaNearLevel(bar) == "Short"  && shortTrade)
             {
-                bars.listSignal.Add(new SignalData(bars.NumberGrid, "Short - Повторяющийся уровень", "h " + bars.Time[bsy], "h " + bars.Time[(bar - 1)], "h " + bars.Time[bar], bars.High[bsy], bars.High[bsy] * 0.9996, ((bars.High[bsy] * 0.9996) * 0.996), DateTime.Now, bars.Name));
+                bars.listSignal.Add(new SignalData("Short - Повторяющийся уровень", "h " + bars.Time[bsy].Day + " " + bars.Time[bsy].ToShortTimeString(), "h " + bars.Time[(bar - 1)].ToShortTimeString(), "h " + bars.Time[bar].ToShortTimeString(), bars.High[bsy], Math.Round(bars.High[bsy] * 0.9996, bars.CountSigns), Math.Round(((bars.High[bsy] * 0.9996) * 0.996), bars.CountSigns), DateTime.Now, bars.Name + " " + bars.TimeFrame));
                 eventHandler(new object(), bars.listSignal.Last());
             }
             if (FindModelMirrorLevel(bar, bars.indexFractalHigh, bars.indexFractalsLow, bars, out bsy) == "Short")// && DefenitionAreaNearLevel(bar) == "Short"  && shortTrade)
             {
-                bars.listSignal.Add(new SignalData(bars.NumberGrid, "Short - Зеркальный уровень", "l " + bars.Time[bsy], "h " + bars.Time[(bar - 1)], "h " + bars.Time[bar], bars.Low[bsy], bars.Low[bsy] * 0.9996, ((bars.Low[bsy] * 0.9996) * 0.996), DateTime.Now, bars.Name));
+                bars.listSignal.Add(new SignalData("Short - Зеркальный уровень", "l " + bars.Time[bsy].Day + " " + bars.Time[bsy].ToShortTimeString(), "h " + bars.Time[(bar - 1)].ToShortTimeString(), "h " + bars.Time[bar].ToShortTimeString(), bars.Low[bsy], Math.Round(bars.Low[bsy] * 0.9996, bars.CountSigns), Math.Round(((bars.Low[bsy] * 0.9996) * 0.996), bars.CountSigns), DateTime.Now, bars.Name + " " + bars.TimeFrame));
                 eventHandler(new object(), bars.listSignal.Last());
             }
             if (AirLevel(bar, bars, out bsy) == "Short")//&& DefenitionAreaNearLevel(bar) == "Nothing" && shortTrade)
             {
-                bars.listSignal.Add(new SignalData(bars.NumberGrid, "Short - Воздушный уровень", "h " + bars.Time[bsy], "h " + bars.Time[(bar - 1)], "h " + bars.Time[bar], bars.Low[bsy], bars.Low[bsy] * 0.9996, ((bars.Low[bsy] * 0.9996) * 0.996), DateTime.Now, bars.Name));
+                bars.listSignal.Add(new SignalData("Short - Воздушный уровень", "h " + bars.Time[bsy].Day + " " + bars.Time[bsy].ToShortTimeString(), "h " + bars.Time[(bar - 1)].ToShortTimeString(), "h " + bars.Time[bar].ToShortTimeString(), bars.High[bsy], Math.Round(bars.High[bsy] * 0.9996, bars.CountSigns), Math.Round(((bars.High[bsy] * 0.9996) * 0.996), bars.CountSigns), DateTime.Now, bars.Name + " " + bars.TimeFrame));
                 ChangeColorConsole(true);
                 eventHandler(new object(), bars.listSignal.Last());
                 ChangeColorConsole(false);
             }
             if (FindModelRepeatLevel(bar, bars.indexFractalHigh, bars.indexFractalsLow, bars, out bsy) == "Long")   // && DefenitionAreaNearLevel(bar) == "Long"   && longTrade)
             {
-                bars.listSignal.Add(new SignalData(bars.NumberGrid, "Long - Повторяющийся уровень", "l " + bars.Time[bsy], "l " + bars.Time[(bar - 1)], "l " + bars.Time[bar], bars.Low[bsy], bars.Low[bsy] * 1.0004, ((bars.Low[bsy] * 1.0004) * 1.004), DateTime.Now, bars.Name));
+                bars.listSignal.Add(new SignalData("Long - Повторяющийся уровень", "l " + bars.Time[bsy].Day + " " + bars.Time[bsy].ToShortTimeString(), "l " + bars.Time[(bar - 1)].ToShortTimeString(), "l " + bars.Time[bar].ToShortTimeString(), bars.Low[bsy], Math.Round(bars.Low[bsy] * 1.0004, bars.CountSigns), Math.Round(((bars.Low[bsy] * 1.0004) * 1.004), bars.CountSigns), DateTime.Now, bars.Name + " " + bars.TimeFrame));
                 eventHandler(new object(), bars.listSignal.Last());
             }
             if (FindModelMirrorLevel(bar, bars.indexFractalHigh, bars.indexFractalsLow, bars, out bsy) == "Long")// && DefenitionAreaNearLevel(bar) == "Long" && longTrade)
             {
-                bars.listSignal.Add(new SignalData(bars.NumberGrid, "Long - Зеркальный уровень", "h " + bars.Time[bsy], "l " + bars.Time[(bar - 1)], "l " + bars.Time[bar], bars.High[bsy], bars.High[bsy] * 1.0004, ((bars.High[bsy] * 1.0004) * 1.004), DateTime.Now, bars.Name));
+                bars.listSignal.Add(new SignalData("Long - Зеркальный уровень", "h " + bars.Time[bsy].Day + " " + bars.Time[bsy].ToShortTimeString(), "l " + bars.Time[(bar - 1)].ToShortTimeString(), "l " + bars.Time[bar].ToShortTimeString(), bars.High[bsy], Math.Round(bars.High[bsy] * 1.0004, bars.CountSigns), Math.Round(((bars.High[bsy] * 1.0004) * 1.004), bars.CountSigns), DateTime.Now, bars.Name + " " + bars.TimeFrame));
                 eventHandler(new object(), bars.listSignal.Last());
             }
             if (AirLevel(bar, bars, out bsy) == "Long")// && DefenitionAreaNearLevel(bar) == "Nothing" && longTrade)
             {
-                bars.listSignal.Add(new SignalData(bars.NumberGrid, "Long - Воздушный уровень", "l " + bars.Time[bsy], "l " + bars.Time[(bar - 1)], "l " + bars.Time[bar], bars.High[bsy], bars.High[bsy] * 1.0004, ((bars.High[bsy] * 1.0004) * 1.004), DateTime.Now, bars.Name));
+                bars.listSignal.Add(new SignalData("Long - Воздушный уровень", "l " + bars.Time[bsy].Day + " " + bars.Time[bsy].ToShortTimeString(), "l " + bars.Time[(bar - 1)].ToShortTimeString(), "l " + bars.Time[bar].ToShortTimeString(), bars.Low[bsy], Math.Round(bars.Low[bsy] * 1.0004, bars.CountSigns), Math.Round(((bars.Low[bsy] * 1.0004) * 1.004), bars.CountSigns), DateTime.Now, bars.Name + " " + bars.TimeFrame));
                 ChangeColorConsole(true);
                 eventHandler(new object(), bars.listSignal.Last());
                 ChangeColorConsole(false);

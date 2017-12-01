@@ -50,6 +50,11 @@ namespace LevelStrategy
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.listSecurity = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +62,7 @@ namespace LevelStrategy
             // 
             this.cbClass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cbClass.FormattingEnabled = true;
-            this.cbClass.Location = new System.Drawing.Point(889, 29);
+            this.cbClass.Location = new System.Drawing.Point(892, 29);
             this.cbClass.Name = "cbClass";
             this.cbClass.Size = new System.Drawing.Size(121, 21);
             this.cbClass.TabIndex = 0;
@@ -67,7 +72,7 @@ namespace LevelStrategy
             // 
             this.cbSecurity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cbSecurity.FormattingEnabled = true;
-            this.cbSecurity.Location = new System.Drawing.Point(889, 86);
+            this.cbSecurity.Location = new System.Drawing.Point(892, 86);
             this.cbSecurity.Name = "cbSecurity";
             this.cbSecurity.Size = new System.Drawing.Size(121, 21);
             this.cbSecurity.TabIndex = 1;
@@ -76,7 +81,7 @@ namespace LevelStrategy
             // 
             this.cbTimeFrame.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cbTimeFrame.FormattingEnabled = true;
-            this.cbTimeFrame.Location = new System.Drawing.Point(889, 142);
+            this.cbTimeFrame.Location = new System.Drawing.Point(892, 142);
             this.cbTimeFrame.Name = "cbTimeFrame";
             this.cbTimeFrame.Size = new System.Drawing.Size(121, 21);
             this.cbTimeFrame.TabIndex = 2;
@@ -84,9 +89,9 @@ namespace LevelStrategy
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(937, 188);
+            this.button1.Location = new System.Drawing.Point(927, 188);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 23);
+            this.button1.Size = new System.Drawing.Size(86, 23);
             this.button1.TabIndex = 3;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
@@ -124,8 +129,9 @@ namespace LevelStrategy
             this.dataGridView1.RowHeadersWidth = 15;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(854, 459);
+            this.dataGridView1.Size = new System.Drawing.Size(857, 431);
             this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
             // 
@@ -178,7 +184,7 @@ namespace LevelStrategy
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(872, 247);
+            this.label1.Location = new System.Drawing.Point(875, 247);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 13);
             this.label1.TabIndex = 6;
@@ -188,7 +194,7 @@ namespace LevelStrategy
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(886, 13);
+            this.label2.Location = new System.Drawing.Point(889, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 13);
             this.label2.TabIndex = 7;
@@ -198,7 +204,7 @@ namespace LevelStrategy
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(886, 70);
+            this.label3.Location = new System.Drawing.Point(889, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 13);
             this.label3.TabIndex = 8;
@@ -208,7 +214,7 @@ namespace LevelStrategy
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(886, 126);
+            this.label4.Location = new System.Drawing.Point(889, 126);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 13);
             this.label4.TabIndex = 9;
@@ -217,17 +223,72 @@ namespace LevelStrategy
             // listSecurity
             // 
             this.listSecurity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.listSecurity.Location = new System.Drawing.Point(875, 263);
+            this.listSecurity.Location = new System.Drawing.Point(878, 263);
             this.listSecurity.Multiline = true;
             this.listSecurity.Name = "listSecurity";
-            this.listSecurity.Size = new System.Drawing.Size(135, 225);
+            this.listSecurity.Size = new System.Drawing.Size(135, 197);
             this.listSecurity.TabIndex = 10;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(927, 221);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(88, 23);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "По умолчанию";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(892, 169);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(116, 17);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.Text = "Поверх всех окон";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(938, 466);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "Удалить";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(794, 466);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(84, 23);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "Fractal period";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(673, 468);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 15;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 500);
+            this.ClientSize = new System.Drawing.Size(1025, 500);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.listSecurity);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -239,7 +300,7 @@ namespace LevelStrategy
             this.Controls.Add(this.cbSecurity);
             this.Controls.Add(this.cbClass);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "FindLevel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -269,5 +330,10 @@ namespace LevelStrategy
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

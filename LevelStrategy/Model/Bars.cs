@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LevelStrategy.Model;
 
-namespace LevelStrategy
+namespace LevelStrategy.Model
 {
     //public enum TimeFrame
     //{
@@ -165,7 +162,7 @@ namespace LevelStrategy
 
         public int periodStrategy = 200;
 
-        public double fractalPeriod = 6;
+        public double fractalPeriod = 9;
 
         public int sdvig = 3;
 
@@ -192,16 +189,16 @@ namespace LevelStrategy
 
         public double StepPrice { get; set; }
 
-        public int StepCount { get; set; } = 0;
+        public int StepCount { get; set; } = 1;
 
         public int SecondsCycle { get; set; } = 120;
 
         public override string ProcessType { get; set; } = "Accept";
-
-        public int NumberGrid { get; set; }
-
+        
         public List<SignalData> listSignal { get; set; }
 
         public List<DateTime> timeToAction { get; set; }
+
+        public int CountSigns { get; set; }
     }
 }
